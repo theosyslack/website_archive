@@ -1,0 +1,20 @@
+.recent-project{
+  color: $main-color;
+  padding: 0;
+
+  > * { padding: 0 5vw; }
+
+  .title,
+  .subtitle {
+    font-weight: 700;
+  }
+
+  .title { padding-bottom: .5em; }
+
+  .subtitle,
+  .description {
+    color: black;
+  }
+
+  .description { font-size: .75em; }
+}

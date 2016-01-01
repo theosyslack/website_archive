@@ -1,5 +1,21 @@
 extends layout
 
+block css
+  link(rel="stylesheet", href="/css/index.css")
+block js
+  script(type="text/javascript", src="/js/index.js")
+  
 block content
-  h1= title
-  p Welcome to #{title}
+  .site-header
+    .title #{title}
+    .subtitle #{subtitle}
+    .bar
+  .-h1 Recent Projects
+  each project in projects
+    .recent-project
+      .title #{project.title}
+      .image-container
+        each image in project.images
+          .image(class="#{image.classes}", style="background-image: url(#{image.src})")
+      .subtitle #{project.subtitle}
+      .description #{project.description}

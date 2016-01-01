@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 20px Helvetica, Arial, sans-serif;
+  line-height: 1em; }
+  body > * {
+    padding: 0 5vw; }
+
+ul {
+  margin: 0; }
+  ul li {
+    list-style: none; }
+
+.-h1 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 2em;
+  padding-top: .25em; }
+
+@media screen and (min-width: 300px) {
+  body {
+    font-size: 20px; } }
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 40px; } }
+
+.site-header {
+  padding-top: 1.5em;
+  color: #F5A623; }
+  .site-header .title {
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1em; }
+  .site-header .subtitle {
+    font-size: .5em;
+    font-weight: 200;
+    padding-bottom: .5em; }
+  .site-header .bar {
+    background: #F5A623;
+    height: .25em;
+    width: 100%; }
+
+.recent-project {
+  color: #F5A623;
+  padding: 0; }
+  .recent-project > * {
+    padding: 0 5vw; }
+  .recent-project .title,
+  .recent-project .subtitle {
+    font-weight: 700; }
+  .recent-project .title {
+    padding-bottom: .5em; }
+  .recent-project .subtitle,
+  .recent-project .description {
+    color: black; }
+  .recent-project .description {
+    font-size: .75em; }
+
+.image-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  background: #F5A623;
+  height: 90vh;
+  overflow: hidden;
+  padding: 0; }
+  .image-container .image {
+    overflow: hidden;
+    background-size: cover; }
+  .image-container .-full,
+  .image-container .-half {
+    width: 50%; }
+  .image-container .-full {
+    height: 100%; }
+  .image-container .-half {
+    height: 50%; }
