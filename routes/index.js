@@ -15,11 +15,11 @@ router.get('/', function(req, res) {
       {
         title: 'RatingsMax',
         subtitle: 'Online review management for small businesses.',
-        description: 'Over the course of 7 months, our development team'+
+        description: 'Over the course of seven months, our development team'+
          ' of three built an entire web app to help small businesses'+
-         ' manage their online reputation. Using <a href="https://laravel.com/">Laravel</a>,'+
-         ' we built a fast and functional app using'+
-         ' the latest standards in the PHP community.',
+         ' manage their online reputation. Using'+
+         ' <a href="https://laravel.com/">Laravel</a>, we built a fast and'+
+         ' functional app using the latest standards in the PHP community.',
         images: [
           {
             src: '/img/project-images/ratingsmax/reviews.png',
