@@ -1,0 +1,130 @@
+a {
+  color: #F5A623; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 20px Helvetica, Arial, sans-serif;
+  line-height: 1em; }
+  body > * {
+    padding: 0 10vw; }
+
+ul {
+  margin: 0; }
+  ul li {
+    list-style: none; }
+
+.-h1 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 2em;
+  padding-top: .25em;
+  padding-bottom: .25em; }
+
+@media screen and (min-width: 300px) {
+  body {
+    font-size: 25px; } }
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 30px; } }
+
+.site-header {
+  padding-top: 1.5em;
+  color: #F5A623; }
+  .site-header .title {
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1em; }
+  .site-header .subtitle {
+    font-size: .5em;
+    font-weight: 200;
+    padding-bottom: .5em; }
+  .site-header .bar {
+    background: #F5A623;
+    height: .25em;
+    width: 100%; }
+
+.recent-project {
+  color: #F5A623;
+  padding: 0; }
+  .recent-project > * {
+    padding: 0 10vw; }
+  .recent-project > .title,
+  .recent-project .subtitle {
+    font-weight: 700; }
+  .recent-project > .title {
+    padding-top: 1em;
+    padding-bottom: .5em; }
+  .recent-project > .subtitle {
+    font-size: .8em;
+    padding-top: .7em;
+    padding-bottom: .2em; }
+  .recent-project > .subtitle,
+  .recent-project .description {
+    color: black; }
+  .recent-project > .description {
+    font-size: .75em;
+    padding-bottom: .5em; }
+
+.image-container {
+  background: #F5A623;
+  height: 30vw;
+  padding: 0 5vw;
+  overflow: hidden; }
+  .image-container .image {
+    background-size: cover;
+    transition: all .2s ease-in-out; }
+  .image-container .-full,
+  .image-container .-half {
+    width: 100%; }
+  .image-container .-full,
+  .image-container .-half {
+    height: 100%; }
+  @media screen and (min-width: 650px) {
+    .image-container {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-end; }
+      .image-container .-full,
+      .image-container .-half {
+        width: 50%; }
+      .image-container .-half {
+        height: 50%; } }
+
+.skills-container {
+  display: block;
+  font-size: 1em;
+  padding: 0 5vw; }
+  .skills-container > * {
+    margin: .1em;
+    width: 100%; }
+  @media screen and (min-width: 650px) {
+    .skills-container {
+      display: flex;
+      align-items: stretch; } }
+
+.skill-set {
+  font-size: 1em;
+  border: #F5A623 0.2em solid;
+  margin-bottom: .5em; }
+  .skill-set > .title {
+    font-weight: 700;
+    padding: .2em;
+    background: #F5A623;
+    color: white; }
+  .skill-set > .skills {
+    font-size: .75em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .1em; }
+    .skill-set > .skills > .skill {
+      padding: .25em;
+      font-weight: 200;
+      transition: all .2s ease-in-out; }
+      .skill-set > .skills > .skill:hover {
+        background: #F5A623;
+        color: white; }
+
+.footer-container {
+  background: #F5A623; }

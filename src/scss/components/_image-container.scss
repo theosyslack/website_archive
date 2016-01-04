@@ -1,0 +1,35 @@
+.image-container{
+  background: $main-color;
+  height: 30vw;
+  padding: 0 $margin-size/2;
+  overflow: hidden;
+
+  .image {
+    background-size: cover;
+    transition: all .2s ease-in-out;
+  }
+
+  .-full,
+  .-half {
+    width: 100%;
+  }
+
+  .-full,
+  .-half {
+    height: 100%;
+  }
+
+  @media screen and (min-width: 650px) {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+
+    .-full,
+    .-half {
+      width: 50%;
+    }
+
+    .-half { height: 50%;  }
+  }
+
+}
