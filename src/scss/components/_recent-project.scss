@@ -1,20 +1,35 @@
+@import '../itcss/settings';
+
 .recent-project{
   color: $main-color;
   padding: 0;
 
-  > * { padding: 0 5vw; }
+  > * { padding: 0 $margin-size; }
 
-  .title,
+  > .title,
   .subtitle {
     font-weight: 700;
   }
 
-  .title { padding-bottom: .5em; }
+  > .title {
+    padding-top: 1em;
+    padding-bottom: .5em;
+  }
 
-  .subtitle,
+  > .subtitle {
+    font-size: .8em;
+    padding-top: .7em;
+    padding-bottom: .2em;
+  }
+
+  > .subtitle,
   .description {
     color: black;
   }
 
-  .description { font-size: .75em; }
+
+  > .description {
+    font-size: .75em;
+    padding-bottom: 1em;
+  }
 }

@@ -19,3 +19,12 @@ block content
           .image(class="#{image.classes}", style="background-image: url(#{image.src})")
       .subtitle #{project.subtitle}
       .description #{project.description}
+      .-h1 Skills Used 
+      .skills-container 
+        each skillSet in project.skillSets
+          .skill-set
+            .title #{skillSet.title}
+            .skills 
+              each skill in skillSet.skills
+                .skill #{skill}
+  .footer This is a footer

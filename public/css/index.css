@@ -4,7 +4,7 @@ body {
   font: 20px Helvetica, Arial, sans-serif;
   line-height: 1em; }
   body > * {
-    padding: 0 5vw; }
+    padding: 0 10vw; }
 
 ul {
   margin: 0; }
@@ -15,11 +15,12 @@ ul {
   font-size: 1em;
   font-weight: bold;
   line-height: 2em;
-  padding-top: .25em; }
+  padding-top: .25em;
+  padding-bottom: .25em; }
 
 @media screen and (min-width: 300px) {
   body {
-    font-size: 20px; } }
+    font-size: 25px; } }
 
 @media screen and (min-width: 600px) {
   body {
@@ -45,33 +46,79 @@ ul {
   color: #F5A623;
   padding: 0; }
   .recent-project > * {
-    padding: 0 5vw; }
-  .recent-project .title,
+    padding: 0 10vw; }
+  .recent-project > .title,
   .recent-project .subtitle {
     font-weight: 700; }
-  .recent-project .title {
+  .recent-project > .title {
+    padding-top: 1em;
     padding-bottom: .5em; }
-  .recent-project .subtitle,
+  .recent-project > .subtitle {
+    font-size: .8em;
+    padding-top: .7em;
+    padding-bottom: .2em; }
+  .recent-project > .subtitle,
   .recent-project .description {
     color: black; }
-  .recent-project .description {
-    font-size: .75em; }
+  .recent-project > .description {
+    font-size: .75em;
+    padding-bottom: 1em; }
+
+.skills-container {
+  display: block;
+  font-size: .6em;
+  padding: 0 5vw; }
+  .skills-container > * {
+    margin: .1em; }
+  @media screen and (min-width: 650px) {
+    .skills-container {
+      font-size: .8em;
+      display: flex;
+      align-items: stretch; } }
+
+.skill-set {
+  font-size: 1em;
+  border: #F5A623 0.2em solid;
+  margin-bottom: .5em; }
+  .skill-set > .title {
+    font-weight: 700;
+    padding: .2em;
+    background: #F5A623;
+    color: white; }
+  .skill-set > .skills {
+    font-size: .75em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .1em; }
+    .skill-set > .skills > .skill {
+      padding: .25em;
+      font-weight: 200;
+      transition: all .2s ease-in-out; }
+      .skill-set > .skills > .skill:hover {
+        background: #F5A623;
+        color: white; }
 
 .image-container {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-end;
   background: #F5A623;
-  height: 90vh;
-  overflow: hidden;
-  padding: 0; }
+  height: 50vw;
+  padding: 0 5vw;
+  overflow: hidden; }
   .image-container .image {
-    overflow: hidden;
-    background-size: cover; }
+    background-size: cover;
+    transition: all .2s ease-in-out; }
   .image-container .-full,
   .image-container .-half {
-    width: 50%; }
-  .image-container .-full {
-    height: 100%; }
+    width: 100%; }
+  .image-container .-full,
   .image-container .-half {
-    height: 50%; }
+    height: 100%; }
+  @media screen and (min-width: 650px) {
+    .image-container {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-end; }
+      .image-container .-full,
+      .image-container .-half {
+        width: 50%; }
+      .image-container .-half {
+        height: 50%; } }
