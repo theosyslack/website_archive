@@ -1,0 +1,32 @@
+@import '../itcss/settings';
+
+.skill-set{
+  font-size: 1em;
+  border: $main-color .2em solid;
+  margin-bottom: .5em;
+
+  > .title {
+    font-weight: 700;
+    padding: .2em;
+    background: $main-color;
+    color: white;
+  }
+
+  > .skills {
+    font-size: .75em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .1em;
+
+    > .skill {
+      padding: .25em;
+      font-weight: 200;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        background: $main-color;
+        color: white;
+      }
+    }
+  }
+}
