@@ -1,3 +1,6 @@
+a {
+  color: #F5A623; }
+
 body {
   margin: 0;
   padding: 0;
@@ -24,7 +27,7 @@ ul {
 
 @media screen and (min-width: 600px) {
   body {
-    font-size: 40px; } }
+    font-size: 30px; } }
 
 .site-header {
   padding-top: 1.5em;
@@ -66,13 +69,13 @@ ul {
 
 .skills-container {
   display: block;
-  font-size: .6em;
+  font-size: .8em;
   padding: 0 5vw; }
   .skills-container > * {
-    margin: .1em; }
+    margin: .1em;
+    width: 100%; }
   @media screen and (min-width: 650px) {
     .skills-container {
-      font-size: .8em;
       display: flex;
       align-items: stretch; } }
 

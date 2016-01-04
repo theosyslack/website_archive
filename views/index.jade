@@ -7,24 +7,24 @@ block js
   
 block content
   .site-header
-    .title #{title}
-    .subtitle #{subtitle}
+    .title= title
+    .subtitle= subtitle
     .bar
   .-h1 Recent Projects
   each project in projects
     .recent-project
-      .title #{project.title}
+      .title= project.title
       .image-container
         each image in project.images
           .image(class="#{image.classes}", style="background-image: url(#{image.src})")
-      .subtitle #{project.subtitle}
-      .description #{project.description}
+      .subtitle= project.subtitle
+      .description!= project.description
       .-h1 Skills Used 
       .skills-container 
         each skillSet in project.skillSets
           .skill-set
-            .title #{skillSet.title}
+            .title= skillSet.title
             .skills 
               each skill in skillSet.skills
-                .skill #{skill}
+                .skill= skill
   .footer This is a footer
