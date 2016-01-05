@@ -1,0 +1,8 @@
+@import '../itcss/settings';
+
+.social-row{
+  display: flex;
+  flex-direction: row;
+
+  .icon { margin: .5em }
+}

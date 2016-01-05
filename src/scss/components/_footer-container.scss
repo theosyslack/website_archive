@@ -1,5 +1,9 @@
 @import '../itcss/settings';
 
 .footer-container{
-  background: $main-color
+  background: $main-color;
+  color: white;
+  padding: 0 $margin-size;
+
+  a { color: white }
 }

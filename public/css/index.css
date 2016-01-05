@@ -127,4 +127,14 @@ ul {
         color: white; }
 
 .footer-container {
-  background: #F5A623; }
+  background: #F5A623;
+  color: white;
+  padding: 0 10vw; }
+  .footer-container a {
+    color: white; }
+
+.social-row {
+  display: flex;
+  flex-direction: row; }
+  .social-row .icon {
+    margin: .5em; }
