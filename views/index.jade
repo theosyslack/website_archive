@@ -2,6 +2,7 @@ extends layout
 
 block css
   link(rel="stylesheet", href="/css/index.css")
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 block js
   script(type="text/javascript", src="/js/index.js")
   
@@ -27,4 +28,13 @@ block content
             .skills 
               each skill in skillSet.skills
                 .skill= skill
-  //- .footer-container This is a footer
+  .footer-container 
+    .social-row
+      .icon.-twitter
+        a(href="http://www.twitter.com/theosyslack") 
+          i(class="fa fa-twitter")
+      .icon.-email
+        a(href="mailto:theosyslack@gmail.com") 
+          i(class="fa fa-envelope-o")
+
+        
