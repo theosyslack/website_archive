@@ -1,0 +1,120 @@
+@import 'settings';
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300,700italic,500);
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-size: 10vw;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background: $light-blue;
+	color: $dark-blue;
+}
+
+header,
+section,
+main, 
+footer {
+	padding: 0 5vw;
+}
+
+
+header { 
+	background: $dark-blue;
+	color: $light-blue;
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 5vw;
+}
+
+section {
+
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: space-around;
+
+	.title { padding-bottom: 3vh; }
+
+
+	&.-ten { height: 10vh; }
+	&.-twenty { height: 20vh; }
+	&.-fourty { height: 40vh; }
+	&.-fifty { height: 50vh; }
+	&.-sixty { height: 60vh; }
+	&.-seventy { height: 70vh; }
+	&.-eighty { height: 80vh; }
+
+	&.-justify-start { justify-content: flex-start; }
+	&.-justify-center { justify-content: center; }
+	&.-justify-around { justify-content: space-around; }
+	&.-justify-around { justify-content: space-around; }
+	&.-justify-end { justify-content: flex-end; }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	line-height: 1em;
+	display: block;
+}
+
+h1 { font-size: 5vh; }
+h2 { font-size: 4vh; }
+h3 { font-size: 3vh; }
+h4 { font-size: 1vh; }
+
+
+.title,
+.subtitle {
+	padding: 1vh 0;
+}
+
+.subtitle {
+
+}
+
+.introduction { 
+	font-weight: 400;
+}
+
+.major {
+	font-size: 3.5vh;
+	text-align: center;
+	font-weight: 200;
+	align-self: center;
+}
+
+.experience {
+
+		
+	.business { 
+		font-size: 6vh;
+		padding: 4vh 0 1vh 0;
+	}
+	.position { 
+		font-size: 4vh;
+		font-weight: 400;
+		padding: 1vh 0 0 0;
+	}
+	.time { 
+		font-size: 2vh; 
+		padding: 1vh 0 0 0;
+	}
+	.description { 
+		font-size: 3vh; 
+		padding: 3vh 0 1vh 0;
+	}
+	.technologies { 
+		font-size: 2vh; 
+	}
+}
