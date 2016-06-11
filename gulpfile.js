@@ -1,47 +1,52 @@
 var gulp = require('gulp'),
+  browserify = require('browserify'),
+  babelify = require('babelify'),
+  vueify = require('vueify'),
   nodemon = require('gulp-nodemon'),
+  es = require('event-stream'),
+  flatten = require('gulp-flatten'),
+  glob = require('glob'),
+  source = require('vinyl-source-stream'),
   plumber = require('gulp-plumber'),
-  babel = require('gulp-babel'),
   livereload = require('gulp-livereload'),
   sass = require('gulp-sass');
 
-
-var p = {
-  'scss': {
-    'destination': './public/css/',
-    'source': './source/scss/**/*.*'
-  },
-  'js': {
-    'destination': './public/js/',
-    'source': '/source/js/**/*.*'
-  }
-};
-
-
-gulp.task('scss', function () {
-  livereload.listen();
-  gulp.src(p.scss.source)
+gulp.task('sass', function () {
+  gulp.src('./source/scss/*.scss')
     .pipe(plumber())
     .pipe(sass())
-    .pipe(gulp.dest(p.scss.destination))
+    .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
 });
 
-gulp.task('js', function(){
-  livereload.listen();
-  gulp.src(p.js.source)
-      .pipe(babel())
-      .pipe(gulp.dest(p.js.destination))
-      .pipe(livereload());
+gulp.task('watch', function() {
+  gulp.watch('./source/scss/*.*', ['sass']);
+  gulp.watch('./source/js/**/*.*', ['bundle']);
 });
 
-gulp.task('watch', function() {
-  gulp.watch(p.scss.source, ['scss']);
-  gulp.watch(p.js.source, ['js']);
+gulp.task('bundle', function (done) {
+    glob('source/js/*.*', function (err, files) {
+        if (err) plumber(err);
+        var tasks = files.map(function (entry) {
+            return browserify({ entries: entry })
+                .transform(vueify)
+                .transform(babelify)
+                .bundle()
+                .on('error', function (err) {
+                    plumber(err);
+                    done();
+                })
+                .pipe(source(entry))
+                .pipe(flatten())
+                .pipe(gulp.dest('public/js/'));
+        });
+
+        es.merge(tasks).on('end', done);
+    });
 });
 
 gulp.task('default', [
-  'scss',
-  'js',
+  'sass',
+  'bundle',
   'watch'
 ]);
