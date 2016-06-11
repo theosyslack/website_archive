@@ -12,6 +12,7 @@ var gulp = require('gulp'),
   sass = require('gulp-sass');
 
 gulp.task('sass', function () {
+  livereload.listen();
   gulp.src('./source/scss/*.scss')
     .pipe(plumber())
     .pipe(sass())
@@ -25,6 +26,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('bundle', function (done) {
+    livereload.listen();
     glob('source/js/*.*', function (err, files) {
         if (err) plumber(err);
         var tasks = files.map(function (entry) {
@@ -38,7 +40,8 @@ gulp.task('bundle', function (done) {
                 })
                 .pipe(source(entry))
                 .pipe(flatten())
-                .pipe(gulp.dest('public/js/'));
+                .pipe(gulp.dest('public/js/'))
+                .pipe(livereload());
         });
 
         es.merge(tasks).on('end', done);

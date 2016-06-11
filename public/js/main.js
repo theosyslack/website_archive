@@ -10433,26 +10433,6 @@ setTimeout(function () {
 module.exports = Vue;
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"_process":1}],4:[function(require,module,exports){
-var inserted = exports.cache = {}
-
-exports.insert = function (css) {
-  if (inserted[css]) return
-  inserted[css] = true
-
-  var elem = document.createElement('style')
-  elem.setAttribute('type', 'text/css')
-
-  if ('textContent' in elem) {
-    elem.textContent = css
-  } else {
-    elem.styleSheet.cssText = css
-  }
-
-  document.getElementsByTagName('head')[0].appendChild(elem)
-  return elem
-}
-
-},{}],5:[function(require,module,exports){
 let Vue = require('vue');
 let ContactBar = require('./vue/ContactBar.vue');
 
@@ -10463,63 +10443,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
       'contact-bar': ContactBar
     },
     data: {
-      message: 'Hello Vue.js!'
+      scrollHeight: window.scrollY,
+      windowHeight: window.innerHeight
+    },
+    methods: {
+      updateScrollHeight: function () {
+        this.scrollHeight = window.scrollY;
+        console.log(this.scrollHeight);
+      }
+    },
+    ready: function () {
+      let windowHeight = window.innerHeight;
+      let _this = this;
+      window.addEventListener('scroll', this.updateScrollHeight);
     }
   });
 });
 
-},{"./vue/ContactBar.vue":6,"vue":3}],6:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n")
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = {
-	data: function data() {
-		return {
-			message: 'What',
-			visible: false
-		};
-	},
-	computed: {
-		classStyle: function classStyle() {
-			return {
-				'contact-bar': true,
-				'visible': this.visible
-			};
-		}
-	},
-	ready: function ready() {
-		var windowHeight = window.innerHeight;
-
-		window.addEventListener('scroll', function (e) {
-			var scrollPosition = window.scrollY;
-			var triggerPosition = windowHeight / 5;
-			console.log(scrollPosition >= triggerPosition);
-			if (scrollPosition >= triggerPosition) {
-				this.visible = true;
-			} else {
-				this.visible = false;
-			}
-		});
-	}
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div :class=\"classStyle\">\n\t{{message}}\n</div>\n"
+},{"./vue/ContactBar.vue":5,"vue":3}],5:[function(require,module,exports){
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/theo/Sites/theosyslack/source/js/vue/ContactBar.vue"
-  module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n"] = false
-    document.head.removeChild(__vueify_style__)
-  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2,"vueify-insert-css":4}]},{},[5]);
+},{"vue":3,"vue-hot-reload-api":2}]},{},[4]);
