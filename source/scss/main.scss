@@ -9,13 +9,20 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 }
 
-
 @media all and (orientation:landscape) {
-	html, body { font-size: 1.6vh; }	
-}
+	html, body { font-size: 1.6vh; }
+} 
 
 body {
 	color: $yellow;
+
+	&.-northwestern {
+		color: #002B49;
+		background: white;
+
+		header { background: #002B49; color: white; }
+		section.-reverse { background: #002B49; color: white; }
+	}
 }
 
 header,
@@ -51,7 +58,7 @@ section {
 	&.-sixty { height: 60vh; }
 	&.-seventy { height: 70vh; }
 	&.-eighty { height: 80vh; }
-
+ 
 
 	//Flexbox
 	&.-justify-start { justify-content: flex-start; }
@@ -91,7 +98,15 @@ h4 { font-size: 1rem; }
 	align-self: center;
 }
 
-.experience {	
+.technology {
+	display: inline-block;
+    border: 1px solid;
+    padding: 0.5em;
+    margin: .25em;
+}
+
+.experience {
+
 	.business { 
 		font-size: 6rem;
 		padding: 5vh 0 .25vh 0;
@@ -109,6 +124,7 @@ h4 { font-size: 1rem; }
 		padding: 3vh 0 4vh 0;
 	}
 	.technologies { 
+		line-height: 1.75em;
 		font-size: 2rem; 
 	}
 }
